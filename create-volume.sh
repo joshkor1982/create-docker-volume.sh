@@ -34,7 +34,6 @@ create_dockerfile() {
         echo "ENTRYPOINT [\"/bin/sh\", \"${BASH_FILE}\"]" >> Dockerfile
     }
 create_bash_script() {
-
     rm -f ${BASH_FILE} && touch ${BASH_FILE} && chmod 777 ${BASH_FILE}
         # echo content to a user defined bash script
         echo "#!/bin/bash" >> "${BASH_FILE}"
@@ -51,7 +50,6 @@ create_bash_script() {
         echo "fi" >> "${BASH_FILE}"
         echo "sleep 5" >> "${BASH_FILE}"
     }
-
 run_container() {
     echo "${cy}-----------------------------${rst}"
     echo "${cy}RUN THE CONTAINER${rst}"
@@ -115,7 +113,6 @@ create_bash_script;
     echo
     cat ${BASH_FILE}
     sleep 4
-
 run_container;
     echo "BELOW ARE THE CONTENTS OF THE BASH SCRIPT: "
     clear
